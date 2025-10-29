@@ -7,7 +7,7 @@
   <div class="container">
     <div class="row justify-content-between gy-5">
       <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
-        <h2 data-aos="fade-up">Sehat Lezat Enak<br>Unklab Canteen</h2>
+        <h2 data-aos="fade-up">tralalelo tralala<br>Unklab Canteen</h2>
         <p data-aos="fade-up" data-aos-delay="100">Kami menyediakan Makanan Pembuka, Makan Siang, Minuman dan Snacks, menemani hari anda dalam beraktivitas di Universitas Klabat.</p>
         <div data-aos="fade-up" data-aos-delay="150">
           <?php if (!empty($_SESSION['user_id'])): ?>
