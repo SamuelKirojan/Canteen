@@ -1,0 +1,17 @@
+# Enable URL rewriting
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# Block access to parent app directory (with or without trailing slash)
+RewriteRule ^app/?$ - [F,L]
+RewriteRule ^\.\./ - [F,L]
+
+# If the file or directory exists, serve it directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Otherwise route to index.php in public
+RewriteRule ^ index.php [L]
+</IfModule>

@@ -1,0 +1,41 @@
+# .htaccess for ROOT directory (/var/www/html/canteen/)
+# Upload this as .htaccess to /var/www/html/canteen/
+
+RewriteEngine On
+
+# Redirect all requests to public directory
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ public/$1 [L]
+
+# If accessing root, redirect to public/index.php
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^$ public/index.php [L]
+
+# Prevent directory listing
+Options -Indexes
+
+# Deny access to sensitive files
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# Protect sensitive file types
+<FilesMatch "\.(sql|md|log|ini|config|env)$">
+    Require all denied
+</FilesMatch>
+
+# Block access to app directory
+<IfModule mod_rewrite.c>
+    RewriteRule ^app/.*$ - [F,L]
+    RewriteRule ^database_backup/.*$ - [F,L]
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Content-Type-Options "nosniff"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

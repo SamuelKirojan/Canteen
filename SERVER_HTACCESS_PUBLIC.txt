@@ -1,0 +1,24 @@
+# .htaccess for PUBLIC directory (/var/www/html/canteen/public/)
+# Upload this as .htaccess to /var/www/html/canteen/public/
+
+RewriteEngine On
+
+# Handle front controller
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Prevent directory listing
+Options -Indexes
+
+# Allow access to assets
+<FilesMatch "\.(jpg|jpeg|png|gif|css|js|ico|svg|woff|woff2|ttf|eot)$">
+    Require all granted
+</FilesMatch>
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
