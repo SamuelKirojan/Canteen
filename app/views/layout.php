@@ -36,7 +36,7 @@ if (basename($baseUrl) === 'public') {
     <header id="header" class="header fixed-top d-flex align-items-center">
       <div class="container d-flex align-items-center justify-content-between">
         <a href="index.php?r=home/index" class="logo d-flex align-items-center me-auto me-lg-0">
-          <h1>Kantin Unklab</h1>
+          <h1>Samuel</h1>
         </a>
         <nav id="navbar" class="navbar">
           <ul>
