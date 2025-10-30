@@ -16,7 +16,7 @@ if (basename($baseUrl) === 'public') {
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Kantin Unklab</title>
+  <title>Samuel Unklab</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
   <link href="<?php echo $baseUrl; ?>assets/img/favicon.png" rel="icon">
