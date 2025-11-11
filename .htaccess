@@ -3,6 +3,16 @@
 
 # Redirect all requests to public directory
 RewriteEngine On
+
+# Serve laporan.html directly (no rewrites)
+RewriteCond %{REQUEST_URI} ^/laporan\.html$ [NC]
+RewriteRule ^ - [L]
+
+# Serve any existing file/dir as-is (prevents framework front-controller catching it)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
 RewriteCond %{REQUEST_URI} !^/public/
 RewriteRule ^(.*)$ public/$1 [L]
 
