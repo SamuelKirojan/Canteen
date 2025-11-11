@@ -3,7 +3,6 @@
 
 # Redirect all requests to public directory
 RewriteEngine On
-RewriteRule ^laporan\.html$ - [L]
 RewriteCond %{REQUEST_URI} !^/public/
 RewriteRule ^(.*)$ public/$1 [L]
 
