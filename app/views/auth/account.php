@@ -78,10 +78,10 @@ $success = $success ?? '';
 
                 <!-- Nurse Login Button -->
                 <a href="index.php?r=admin/login"
-                  class="btn btn-outline-secondary w-100 fw-semibold mt-3"
-                  style="border:1px solid #d0d0d0; border-radius:.5rem; padding:.875rem 0; font-size:1rem; color:#555;">
-                  Nurse Login
-                </a>
+                class="btn btn-outline-secondary w-100 fw-semibold mt-3"
+                style="border:1px solid #d0d0d0; border-radius:.5rem; padding:.875rem 0; font-size:1rem; color:#555;">
+                Nurse Login
+              </a>
 
 
 
