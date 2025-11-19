@@ -162,6 +162,14 @@ $success = $success ?? '';
           This portal is for authorized medical staff only. All access is monitored and logged.
         </p>
 
+        <!-- Admin link -->
+        <div class="text-center mt-3">
+          <span class="text-muted" style="font-size:.875rem;">Are you an admin?</span>
+          <a href="index.php?r=admin/login" class="text-decoration-none ms-1" style="color:#4169E1; font-weight:500; font-size:.875rem;">
+            Admin Login
+          </a>
+        </div>
+
       </div>
     </div>
   </div>
