@@ -55,7 +55,7 @@ $success = $success ?? '';
                   <div class="mb-3">
                     <label class="form-label fw-semibold mb-2" style="color:#1a1a1a;">Email</label>
                     <input type="email" name="email" class="form-control form-control-lg"
-                           placeholder="enter email" required
+                           placeholder="doctor@hospital.com" required
                            style="background:#f5f5f5; border:1px solid #e0e0e0; border-radius:.5rem; padding:.75rem 1rem;">
                   </div>
 
@@ -65,12 +65,12 @@ $success = $success ?? '';
                       <a href="#" class="text-decoration-none" style="color:#4169E1; font-size:.9rem;">Forgot password?</a>
                     </div>
                     <input type="password" name="password" class="form-control form-control-lg"
-                           placeholder="enter password" required
+                           placeholder="••••••••" required
                            style="background:#f5f5f5; border:1px solid #e0e0e0; border-radius:.5rem; padding:.75rem 1rem;">
                   </div>
 
                   <button type="submit" 
-                          class="btn btn-dark w-100 fw-semibold text-white"
+                          class="btn w-100 fw-semibold text-white"
                           style="background:#050414; border:none; border-radius:.5rem; padding:.875rem 0; font-size:1rem; margin-top:1.5rem;">
                     Sign In
                   </button>
@@ -104,7 +104,7 @@ $success = $success ?? '';
                   <div class="mb-3">
                     <label class="form-label fw-semibold mb-2" style="color:#1a1a1a;">Email</label>
                     <input type="email" name="email" class="form-control form-control-lg"
-                           placeholder="enter email" required
+                           placeholder="nurse@hospital.com" required
                            style="background:#f5f5f5; border:1px solid #e0e0e0; border-radius:.5rem; padding:.75rem 1rem;">
                   </div>
 
@@ -114,12 +114,12 @@ $success = $success ?? '';
                       <a href="#" class="text-decoration-none" style="color:#4169E1; font-size:.9rem;">Forgot password?</a>
                     </div>
                     <input type="password" name="password" class="form-control form-control-lg"
-                           placeholder="enter password" required
+                           placeholder="••••••••" required
                            style="background:#f5f5f5; border:1px solid #e0e0e0; border-radius:.5rem; padding:.75rem 1rem;">
                   </div>
 
                   <button type="submit" 
-                          class="btn btn-dark w-100 fw-semibold text-white"
+                          class="btn w-100 fw-semibold text-white"
                           style="background:#050414; border:none; border-radius:.5rem; padding:.875rem 0; font-size:1rem; margin-top:1.5rem;">
                     Sign In
                   </button>
