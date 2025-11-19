@@ -1,5 +1,5 @@
 <?php 
-$active  = ($tab ?? 'login'); 
+$active  = ($tab ?? 'doctor'); 
 $error   = $error ?? '';
 $success = $success ?? '';
 ?>
@@ -16,7 +16,7 @@ $success = $success ?? '';
             <i class="bi bi-heart-pulse-fill text-white" style="font-size: 1.75rem;"></i>
           </div>
           <h4 class="mb-1 fw-bold" style="color:#1a1a1a;">MediCare Portal</h4>
-          <div class="text-muted">Doctor Login</div>
+          <div class="text-muted">Staff Login</div>
         </div>
 
         <!-- Card -->
@@ -38,14 +38,14 @@ $success = $success ?? '';
               </div>
             <?php endif; ?>
 
-            <!-- Tab Content (hidden tabs, visual kept simple) -->
+            <!-- Tab Content -->
             <div class="tab-content">
 
-              <!-- Sign In Tab -->
-              <div id="pane-login" class="tab-pane fade <?php echo $active==='login'?'show active':''; ?>">
+              <!-- Doctor Login Tab -->
+              <div id="pane-doctor" class="tab-pane fade <?php echo $active==='doctor'?'show active':''; ?>">
                 <!-- Header text -->
                 <div class="mb-4">
-                  <h4 class="fw-bold mb-2" style="color:#1a1a1a;">Welcome Back</h4>
+                  <h4 class="fw-bold mb-2" style="color:#1a1a1a;">Doctor Login</h4>
                   <p class="text-muted mb-0">
                     Sign in to access your medical dashboard
                   </p>
@@ -55,7 +55,7 @@ $success = $success ?? '';
                   <div class="mb-3">
                     <label class="form-label fw-semibold mb-2" style="color:#1a1a1a;">Email</label>
                     <input type="email" name="email" class="form-control form-control-lg"
-                           placeholder="doctor@hospital.com" required
+                           placeholder="enter email" required
                            style="background:#f5f5f5; border:1px solid #e0e0e0; border-radius:.5rem; padding:.75rem 1rem;">
                   </div>
 
@@ -65,7 +65,7 @@ $success = $success ?? '';
                       <a href="#" class="text-decoration-none" style="color:#4169E1; font-size:.9rem;">Forgot password?</a>
                     </div>
                     <input type="password" name="password" class="form-control form-control-lg"
-                           placeholder="••••••••" required
+                           placeholder="enter password" required
                            style="background:#f5f5f5; border:1px solid #e0e0e0; border-radius:.5rem; padding:.75rem 1rem;">
                   </div>
 
@@ -76,11 +76,11 @@ $success = $success ?? '';
                   </button>
                 </form>
 
-                <!-- Sign Up Button -->
+                <!-- Switch to Nurse Login Button -->
                 <button class="btn btn-outline-secondary w-100 fw-semibold mt-3"
-                        data-bs-toggle="tab" data-bs-target="#pane-signup" type="button"
+                        data-bs-toggle="tab" data-bs-target="#pane-nurse" type="button"
                         style="border:1px solid #d0d0d0; border-radius:.5rem; padding:.875rem 0; font-size:1rem; color:#555;">
-                  Sign Up
+                  Nurse Login
                 </button>
 
                 <!-- Help text -->
@@ -90,44 +90,46 @@ $success = $success ?? '';
                 </div>
               </div>
 
-              <!-- Sign Up Tab -->
-              <div id="pane-signup" class="tab-pane fade <?php echo $active==='signup'?'show active':''; ?>">
+              <!-- Nurse Login Tab -->
+              <div id="pane-nurse" class="tab-pane fade <?php echo $active==='nurse'?'show active':''; ?>">
                 <!-- Header text -->
                 <div class="mb-4">
-                  <h4 class="fw-bold mb-2" style="color:#1a1a1a;">Create Account</h4>
+                  <h4 class="fw-bold mb-2" style="color:#1a1a1a;">Nurse Login</h4>
                   <p class="text-muted mb-0">
-                    Sign up to access your medical dashboard
+                    Sign in to access your medical dashboard
                   </p>
                 </div>
 
-                <form method="POST" action="index.php?r=auth/signup">
+                <form method="POST" action="index.php?r=admin/login">
                   <div class="mb-3">
                     <label class="form-label fw-semibold mb-2" style="color:#1a1a1a;">Email</label>
                     <input type="email" name="email" class="form-control form-control-lg"
-                           placeholder="doctor@hospital.com" required
+                           placeholder="enter email" required
                            style="background:#f5f5f5; border:1px solid #e0e0e0; border-radius:.5rem; padding:.75rem 1rem;">
                   </div>
 
                   <div class="mb-3">
-                    <label class="form-label fw-semibold mb-2" style="color:#1a1a1a;">Password</label>
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                      <label class="form-label fw-semibold mb-0" style="color:#1a1a1a;">Password</label>
+                      <a href="#" class="text-decoration-none" style="color:#4169E1; font-size:.9rem;">Forgot password?</a>
+                    </div>
                     <input type="password" name="password" class="form-control form-control-lg"
-                           placeholder="Minimum 6 characters" required minlength="6"
+                           placeholder="enter password" required
                            style="background:#f5f5f5; border:1px solid #e0e0e0; border-radius:.5rem; padding:.75rem 1rem;">
-                    <small class="text-muted d-block mt-2">Password must be at least 6 characters long.</small>
                   </div>
 
                   <button type="submit" 
                           class="btn btn-dark w-100 fw-semibold text-white"
                           style="background:#050414; border:none; border-radius:.5rem; padding:.875rem 0; font-size:1rem; margin-top:1.5rem;">
-                    Create Account
+                    Sign In
                   </button>
                 </form>
 
-                <!-- Back to Sign In Button -->
+                <!-- Switch to Doctor Login Button -->
                 <button class="btn btn-outline-secondary w-100 fw-semibold mt-3"
-                        data-bs-toggle="tab" data-bs-target="#pane-login" type="button"
+                        data-bs-toggle="tab" data-bs-target="#pane-doctor" type="button"
                         style="border:1px solid #d0d0d0; border-radius:.5rem; padding:.875rem 0; font-size:1rem; color:#555;">
-                  Back to Sign In
+                  Doctor Login
                 </button>
 
                 <!-- Help text -->
@@ -141,15 +143,15 @@ $success = $success ?? '';
             <!-- Hidden nav tabs for functionality only -->
             <ul class="nav nav-pills d-none" role="tablist">
               <li class="nav-item" role="presentation">
-                <button class="nav-link <?php echo $active==='login'?'active':''; ?>"
-                        data-bs-toggle="tab" data-bs-target="#pane-login" type="button" role="tab">
-                  Sign In
+                <button class="nav-link <?php echo $active==='doctor'?'active':''; ?>"
+                        data-bs-toggle="tab" data-bs-target="#pane-doctor" type="button" role="tab">
+                  Doctor
                 </button>
               </li>
               <li class="nav-item" role="presentation">
-                <button class="nav-link <?php echo $active==='signup'?'active':''; ?>"
-                        data-bs-toggle="tab" data-bs-target="#pane-signup" type="button" role="tab">
-                  Sign Up
+                <button class="nav-link <?php echo $active==='nurse'?'active':''; ?>"
+                        data-bs-toggle="tab" data-bs-target="#pane-nurse" type="button" role="tab">
+                  Nurse
                 </button>
               </li>
             </ul>
@@ -161,14 +163,6 @@ $success = $success ?? '';
         <p class="text-center text-muted mt-4 mb-0" style="font-size:.875rem;">
           This portal is for authorized medical staff only. All access is monitored and logged.
         </p>
-
-        <!-- Admin link -->
-        <div class="text-center mt-3">
-          <span class="text-muted" style="font-size:.875rem;">Are you an admin?</span>
-          <a href="index.php?r=admin/login" class="text-decoration-none ms-1" style="color:#4169E1; font-weight:500; font-size:.875rem;">
-            Admin Login
-          </a>
-        </div>
 
       </div>
     </div>
