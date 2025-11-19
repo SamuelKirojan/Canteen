@@ -46,7 +46,7 @@ class Rating {
             $stmt = $pdo->prepare('
                 SELECT r.*, u.email as user_email, o.id as order_id
                 FROM order_ratings r
-                JOIN users u ON r.user_id = u.id
+                JOIN doctors d ON r.user_id = u.id
                 JOIN orders o ON r.order_id = o.id
                 WHERE r.review IS NOT NULL AND r.review != ""
                 ORDER BY r.created_at DESC

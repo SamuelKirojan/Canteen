@@ -24,7 +24,7 @@ class ProfileController extends Controller {
             $pdo = Database::getInstance();
             
             // Get user info
-            $stmt = $pdo->prepare('SELECT * FROM users WHERE id = ?');
+            $stmt = $pdo->prepare('SELECT * FROM doctors WHERE id = ?');
             $stmt->execute([$userId]);
             $user = $stmt->fetch();
 
@@ -73,7 +73,7 @@ class ProfileController extends Controller {
 
             try {
                 $pdo = Database::getInstance();
-                $stmt = $pdo->prepare('SELECT password_hash FROM users WHERE id = ?');
+                $stmt = $pdo->prepare('SELECT password_hash FROM doctors WHERE id = ?');
                 $stmt->execute([$userId]);
                 $user = $stmt->fetch();
 
@@ -102,7 +102,7 @@ class ProfileController extends Controller {
                 }
 
                 $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
-                $stmt = $pdo->prepare('UPDATE users SET password_hash = ? WHERE id = ?');
+                $stmt = $pdo->prepare('UPDATE doctors SET password_hash = ? WHERE id = ?');
                 $stmt->execute([$hashedPassword, $userId]);
 
                 $this->render('profile/change-password', [
