@@ -15,17 +15,6 @@ class AuthController extends Controller {
             $email = trim($_POST['email'] ?? '');
             $password = $_POST['password'] ?? '';
             $user = User::findByEmail($email);
-
-            // 🔍 DEBUG BLOCK — TEMPORARY
-            header('Content-Type: text/plain; charset=utf-8');
-            echo "Email entered: {$email}\n\n";
-            echo "User row from DB:\n";
-            var_dump($user);
-            echo "\n\nPassword verify result:\n";
-            var_dump($user ? password_verify($password, $user['password_hash']) : null);
-            exit;
-            // 🔍 END DEBUG
-
             if ($user && password_verify($password, $user['password_hash'])) {
                 $_SESSION['user_id'] = (int)$user['id'];
                 $_SESSION['user_email'] = $user['email'];
@@ -34,7 +23,6 @@ class AuthController extends Controller {
                 exit;
             }
             $error = 'Invalid email or password.';
-
         }
         $this->render('auth/account', ['tab' => 'login', 'error' => $error]);
     }
