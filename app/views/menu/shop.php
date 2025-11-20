@@ -188,7 +188,7 @@ $items       = $items ?? [];
         <?php if (!empty($recentPatients)): ?>
           <div class="list-group mb-4">
             <?php foreach ($recentPatients as $p): ?>
-              <a href="index.php?r=orders/info&id=<?= (int)$p['id'] ?>" class="list-group-item list-group-item-action">
+              <a href="index.php?r=order/info&id=<?= (int)$p['id'] ?>" class="list-group-item list-group-item-action">
                 <div class="d-flex justify-content-between">
                   <div>
                     <strong><?= htmlspecialchars($p['name']) ?></strong><br>
@@ -211,7 +211,7 @@ $items       = $items ?? [];
         <?php if (!empty($medActivity)): ?>
           <div class="list-group mb-4">
             <?php foreach ($medActivity as $m): ?>
-              <a href="index.php?r=orders/info&id=<?= (int)$m['id'] ?>" class="list-group-item list-group-item-action">
+              <a href="index.php?r=order/info&id=<?= (int)$m['id'] ?>" class="list-group-item list-group-item-action">
                 <div class="d-flex justify-content-between">
                   <div>
                     <strong><?= htmlspecialchars($m['patient']) ?></strong><br>
@@ -229,7 +229,7 @@ $items       = $items ?? [];
         <!-- Quick Actions -->
         <div class="d-flex gap-2">
           <!-- later: link this to real medication create form -->
-          <a href="index.php?r=orders/update" class="btn btn-primary">Add Medication</a>
+          <a href="index.php?r=order/update" class="btn btn-primary">Add Medication</a>
         </div>
       </div>
 
@@ -257,7 +257,7 @@ $items       = $items ?? [];
                     <td><?= htmlspecialchars($p['allergies']) ?></td>
                     <td><?= htmlspecialchars($p['last_update']) ?></td>
                     <td>
-                      <a href="index.php?r=orders/info&id=<?= (int)$p['id'] ?>" class="btn btn-sm btn-outline-primary">
+                      <a href="index.php?r=order/info&id=<?= (int)$p['id'] ?>" class="btn btn-sm btn-outline-primary">
                         View
                       </a>
                     </td>
